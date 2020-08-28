@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  birth_date: 2020-08-28
+  gender: MyString
+  height: 1
+  weight: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  birth_date: 2020-08-28
+  gender: MyString
+  height: 1
+  weight: 1
