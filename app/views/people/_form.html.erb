@@ -3,67 +3,24 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-body p-0">
-        <%= form_with(model: person, local: true) do |form| %>
+        <%= bootstrap_form_for(@person) do |form| %>
           <div class="card-body">
 
-            <div class="form-group">
-              <label for="firstName">
-                <%= form.label :first_name %>
-              </label>
-              <%= form.text_field :first_name, class: "form-control", id: "firstName" %>
-            </div>
+            <%= form.text_field :first_name %>
 
-            <div class="form-group">
-              <label for="lastName">
-                <%= form.label :last_name %>
-              </label>
-              <%= form.text_field :last_name, class: "form-control", id: "lastName" %>
-            </div>
+            <%= form.text_field :last_name %>
 
-            <div class="form-group">
-              <label for="birthDate">
-                <%= form.label :birth_date %>
-              </label>
-              <%= form.date_field(:birth_date, class: "form-control") %>
-            </div>
+            <%= form.date_field :birth_date %>
 
-            <div class="form-group">
-              <label for="gender">
-                <%= form.label :gender %>
-              </label>
-              <%= form.select(:gender, Person.genders, {:include_blank => false}, {:class => "custom-select form-control"}) %>
-            </div>
+            <%= form.select(:gender, Person.genders, {:include_blank => false}, {:class => "custom-select"}) %>
 
-            <div class="form-group">
-              <label for="height">
-                Height <small>(Cm)</small>
-              </label>
-              <%= form.number_field :height, {class: "form-control", id: "height"} %>
-            </div>
+            <%= form.number_field :height %>
 
-            <div class="form-group">
-              <label for="weight">
-                Weight <small>(Kg)</small>
-              </label>
-              <%= form.number_field :weight, {class: "form-control", id: "weight"} %>
-            </div>
+            <%= form.number_field :weight %>
 
-            <div class="form-group">
-              <label for="description">
-                <%= form.label :description %>
-              </label>
-              <%= form.text_area(:description, size: "24x6", class: "form-control") %>
-            </div>
+            <%= form.text_area :description, size: "24x6" %>
 
-            <div class="form-group">
-              <label for="activation">
-                <%= form.label :activation %>
-              </label>
-              <div class="custom-control custom-switch">
-                <%= form.check_box(:activation, class: "custom-control-input", id: "customSwitch1") %>
-                <label class="custom-control-label" for="customSwitch1"></label>
-              </div>
-            </div>
+            <%= form.check_box :activation %>
 
           </div>
           <!-- /.card-body -->
