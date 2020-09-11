@@ -4,7 +4,17 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    if params[:search_term]
+      @search_results = Person.where("lower(first_name) LIKE :search_term or lower(last_name) LIKE :search_term", search_term: "%#{params[:search_term]}%")
+
+      # to make this response to ajax call
+      respond_to do |format|
+        format.js { render partial: 'search-results'}
+      end
+
+    else
+      @people = Person.all
+    end
   end
 
   # GET /people/1

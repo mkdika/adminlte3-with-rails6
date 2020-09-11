@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('admin-lte');
+require("jquery");
 
 import 'bootstrap';
 import '../stylesheets/application'; // This file will contain your custom CSS
